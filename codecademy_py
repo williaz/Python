@@ -47,3 +47,12 @@ CLASS
 (pass doesn't do anything, but it's useful as a placeholder in areas of your code where Python expects an expression.)
 
 __init__(). This function is required for classes, and it's used to initialize the objects it creates. __init__() always takes at least one argument, self, that refers to the object being created. 
+
+class's methods always takes at least one argument, self, that refers to the object being created. 
+
+You can directly access the attributes or methods of a superclass with Python's built-in super call.
+
+Normally we use object as the parent class because it is the most basic type of class, but by specifying a different class, we can inherit more complicated functionality.
+
+One useful class method to override is the built-in __repr__() method, which is short for representation; by providing a return value in this method, we can tell Python how to represent an object of our class (for instance, when using a print statement).
+
