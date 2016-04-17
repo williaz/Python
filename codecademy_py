@@ -1,3 +1,5 @@
+BITWISE
+
 Bitwise operations are operations that directly manipulate bits. In all computers, numbers are represented with bits, a series of zeros and ones. In fact, pretty much everything in a computer is represented by bits. 
 
 8's bit  4's bit  2's bit  1's bit
@@ -37,3 +39,11 @@ a = 0b101
 # Tenth bit mask
 mask = (0b1 << 9)  # One less than ten 
 desired = a ^ mask
+
+
+CLASS
+
+
+(pass doesn't do anything, but it's useful as a placeholder in areas of your code where Python expects an expression.)
+
+__init__(). This function is required for classes, and it's used to initialize the objects it creates. __init__() always takes at least one argument, self, that refers to the object being created. 
