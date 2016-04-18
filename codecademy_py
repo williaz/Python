@@ -56,3 +56,12 @@ Normally we use object as the parent class because it is the most basic type of 
 
 One useful class method to override is the built-in __repr__() method, which is short for representation; by providing a return value in this method, we can tell Python how to represent an object of our class (for instance, when using a print statement).
 
+
+FILE I/O
+
+
+You must close the file. You do this simply by calling my_file.close() . If you don't close your file, Python won't write to it properly. 
+
+with open("file", "mode") as variable:
+    # Read or write to the file
+    #file objects contain a special pair of built-in methods: __enter__() and __exit__(). The details aren't important, but what is important is that when a file object's __exit__() method is invoked, it automatically closes the file. 
