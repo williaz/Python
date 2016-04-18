@@ -1,1 +1,60 @@
+1. Methods to implement
 Your algorithm is required to implement two methods: initialize and handle_data. A third method, 'before_trading_start' is optional.
+initialize(context)
+Called once at the very beginning of a backtest. Your algorithm can use this method to set up any bookkeeping that you'd like.
+
+The context object will be passed to all the other methods in your algorithm.
+context: An initialized and empty Python dictionary. The dictionary has been augmented so that properties can be accessed using dot notation as well as the traditional bracket notation.
+
+handle_data(context, data)
+Called whenever a market event occurs for any of your algorithm's specified securities.
+
+data: A dictionary containing your universe at that time, keyed by security id. It represents a snapshot of your algorithm's universe as of when this method was called. Market information about each security and transforms are all available in this object. 
+
+before_trading_start(context, data)
+The primary purpose of before_trading_start is to query Quantopian's fundamentals database for financial performance data on individual companies.  based on 600+ measurable criteria. The data dictionary is updated in this process.
+
+2. Order Methods
+
+3. data
+Each time any of the securities has a trading event (at most once per trading minute), handle_data is called and the data object contains all the market data for your securities.
+
+For example, to access the market event data for AAPL, use data[symbol('AAPL')]. The following properties are supported:
+
+datetime
+DateTime: The UTC timestamp of the market event.
+price
+Float: The closing price of the security for the given bar.
+open_price
+Float: The opening price of the security for the given bar.
+close_price
+Float: The closing price of the security for the given bar. Identical to price.
+high
+Float: The highest price of the security within the given bar.
+low
+Float: The lowest price of the security within the given bar.
+volume
+Integer: The whole number of shares traded in the most recent market event for this security.
+We also provide some transforms:
+
+mavg(days)
+Moving average price for the given security for the given number of trailing days.
+returns()
+The returns of this security since the end of the previous trading day.
+stddev(days)
+Standard deviation of the price of the given security for the given number of trailing days, calculated using Bessel's Correction.
+vwap(days)
+Volume-weighted average price for the given security for the given number of trailing days.
+
+Moving average types
+Some of the TA-Lib methods have an integer matype parameter. Here's the list of moving average types:
+0: SMA (simple)
+1: EMA (exponential)
+2: WMA (weighted)
+3: DEMA (double exponential)
+4: TEMA (triple exponential)
+5: TRIMA (triangular) 
+6: KAMA (Kaufman adaptive)
+7: MAMA (Mesa adaptive)
+8: T3 (triple exponential T3)
+
