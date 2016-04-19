@@ -1,3 +1,63 @@
+STRING
+
+ +---+---+---+---+---+---+
+ | P | y | t | h | o | n |
+ +---+---+---+---+---+---+
+ 0   1   2   3   4   5   6
+-6  -5  -4  -3  -2  -1
+
+
+len(parrot)
+parrot.lower()
+parrot.upper()
+str(pi)
+
+print "Spam"+" and "+"eggs"
+
+print "Let's not go to %s. \'Tis a silly %s." % (string_1, string_2)
+
+
+DICTIONARIES
+
+
+residents = {'Puffin' : 104, 'Sloth' : 105, 'Burmese Python' : 106}
+
+print residents['Puffin'] 
+
+>>> a = dict(one=1, two=2, three=3)
+>>> b = {'one': 1, 'two': 2, 'three': 3}
+>>> c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+>>> d = dict([('two', 2), ('one', 1), ('three', 3)])
+>>> e = dict({'three': 3, 'one': 1, 'two': 2})
+>>> a == b == c == d == e
+True
+
+
+
+LIST
+
+
+Operation	Result	Notes
+s[i] = x	item i of s is replaced by x	 
+s[i:j] = t	slice of s from i to j is replaced by the contents of the iterable t	 
+del s[i:j]	same as s[i:j] = []	 
+s[i:j:k] = t	the elements of s[i:j:k] are replaced by those of t	(1)
+del s[i:j:k]	removes the elements of s[i:j:k] from the list	 
+s.append(x)	appends x to the end of the sequence (same as s[len(s):len(s)] = [x])	 
+s.clear()	removes all items from s (same as del s[:])	
+s.copy()	creates a shallow copy of s (same as s[:])	
+s.extend(t) or s += t	extends s with the contents of t (for the most part the same as s[len(s):len(s)] = t)	 
+s *= n	updates s with its contents repeated n times	
+s.insert(i, x)	inserts x into s at the index given by i (same as s[i:i] = [x])	 
+s.pop([i])	retrieves the item at i and also removes it from s	
+s.remove(x)	remove the first item from s where s[i] == x	
+s.reverse()	reverses the items of s in place	
+
+
+
+
+
+
 BITWISE
 
 Bitwise operations are operations that directly manipulate bits. In all computers, numbers are represented with bits, a series of zeros and ones. In fact, pretty much everything in a computer is represented by bits. 
