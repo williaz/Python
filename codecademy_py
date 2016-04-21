@@ -115,7 +115,9 @@ You can directly access the attributes or methods of a superclass with Python's 
 Normally we use object as the parent class because it is the most basic type of class, but by specifying a different class, we can inherit more complicated functionality.
 
 One useful class method to override is the built-in __repr__() method, which is short for representation; by providing a return value in this method, we can tell Python how to represent an object of our class (for instance, when using a print statement).
-
+def __repr__(self):
+        return "(%d, %d, %d)" % (self.x,self.y,self.z)
+# __repr__ must return string
 
 FILE I/O
 
