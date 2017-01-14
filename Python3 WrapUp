@@ -1,0 +1,24 @@
+# read a line from STDIN
+my_string = input()
+name = input("Hey, what's your name?\n")
+
+def read():
+    s = input()
+    if 1 <= len(s) <= 500:
+        return s
+    else :
+        return
+    
+range(inclusive, exclusive)
+
+integer division: a // b. float division: a / b.
+
+Conversion functions: int(), float(), str(), complex("r+pj")
+
+Math functions: pow(i, p), abs()
+
+True/False None
+
+if :
+elif :
+else :
