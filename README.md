@@ -3,7 +3,7 @@
 ###Basics
 #### Syntax
 - A colon denotes the start of an indented code block after which all of the code must be indented by the same amount until the end of the block.
-- # is ignored by the Python interpreter => comment
+- is ignored by the Python interpreter => comment
 - Functions can take both positional and keyword arguments
 ```
 result = f(a, b, c, d=5, e='foo')
@@ -84,6 +84,45 @@ the year are “week 0”
 %F Shortcut for %Y-%m-%d (e.g., 2012-4-18)
 %D Shortcut for %m/%d/%y (e.g., 04/18/12)
 ```
+#### Control Flow
+
+- if, elif, and else
+```
+if x < 0:
+    print('It's negative')
+elif x == 0:
+    print('Equal to zero')
+elif 0 < x < 5:
+     print('Positive but smaller than 5')
+else:
+     print('Positive and larger than or equal to 5')
+```
+
+- for loops
+- You can advance a for loop to the next iteration, skipping the remainder of the block, using the continue keyword.
+- A for loop can be exited altogether with the break keyword.
+```
+for value in collection:
+# do something with value
+
+# if the elements in the collection or iterator are sequences
+# (tuples or lists, say), they can be conveniently unpacked into variables in the for
+# loop statement
+
+for a, b, c in iterator:
+# do something
+```
+
+- wile
+- pass: used in blocks where no action is to be taken
+-  range 
+```
+# range produces integers up to but not including the endpoint
+list(range(0, 20, 2))
+>>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+```
+
+
 
 
 
