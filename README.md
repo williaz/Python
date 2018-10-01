@@ -113,14 +113,90 @@ for a, b, c in iterator:
 # do something
 ```
 
-- wile
+- while
 - pass: used in blocks where no action is to be taken
--  range 
+- range 
 ```
 # range produces integers up to but not including the endpoint
 list(range(0, 20, 2))
 >>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 ```
+- A ternary expression in Python allows you to combine an if-else block that produces a value into a single line or expression.
+```
+'Non-negative' if x >= 0 else 'Negative'
+>>'Non-negative'
+```
+
+
+### Data Structure
+
+#### Tuple
+- A tuple is a fixed-length, immutable sequence of Python objects.
+- once the tuple is created it’s not possible to modify which object is stored in each slot
+```
+#The easiest way to create one is with a comma-separated sequence of values
+tup = 4, 5, 6
+tup
+>>(4, 5, 6)
+
+#You can convert any sequence or iterator to a tuple by invoking tuple
+In [6]: tup = tuple('string')
+In [7]: tup
+Out[7]: ('s', 't', 'r', 'i', 'n', 'g')
+In [8]: tup[0]
+Out[8]: 's'
+
+#using the + operator to produce longer tuples
+In [13]: (4, None, 'foo') + (6, 0) + ('bar',)
+Out[13]: (4, None, 'foo', 6, 0, 'bar')
+
+In [14]: ('foo', 'bar') * 4
+Out[14]: ('foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', 'bar')
+#Note that the objects themselves are not copied, only the references to them.
+```
+- unpack
+```
+In [18]: tup = 4, 5, (6, 7)
+In [19]: a, b, (c, d) = tup
+In [20]: d
+Out[20]: 7
+
+#swap
+In [21]: a, b = 1, 2
+In [22]: a
+Out[22]: 1
+In [23]: b
+Out[23]: 2
+In [24]: b, a = a, b
+In [25]: a
+Out[25]: 2
+In [26]: b
+Out[26]: 1
+```
+
+- A common use of variable unpacking is iterating over sequences of tuples or lists:
+```
+In [27]: seq = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+In [28]: for a, b, c in seq:
+....: print('a={0}, b={1}, c={2}'.format(a, b, c))
+a=1, b=2, c=3
+a=4, b=5, c=6
+a=7, b=8, c=9
+```
+
+- *rest
+```
+In [29]: values = 1, 2, 3, 4, 4
+In [30]: a, b, *_ = values
+In [31]: a, b
+Out[31]: (1, 2)
+In [32]: _
+Out[32]: [3, 4, 4]
+
+values.count(4)
+2
+```
+
 
 
 
