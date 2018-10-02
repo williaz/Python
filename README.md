@@ -1,6 +1,6 @@
 # Python
 
-###Basics
+### Basics
 #### Syntax
 - A colon denotes the start of an indented code block after which all of the code must be indented by the same amount until the end of the block.
 - is ignored by the Python interpreter => comment
@@ -196,9 +196,65 @@ Out[32]: [3, 4, 4]
 values.count(4)
 2
 ```
+#### List
 
+- The list function is frequently used in data processing as a way to materialize an iterator or generator expression
 
+- Elements can be removed by value with remove, which locates the first such value and removes it from the list
 
+```
+In [45]: b_list.append('dwarf')
+In [46]: b_list
+Out[46]: ['foo', 'peekaboo', 'baz', 'dwarf']
+In [47]: b_list.insert(1, 'red')
+In [48]: b_list
+Out[48]: ['foo', 'red', 'peekaboo', 'baz', 'dwarf']
+In [51]: b_list.append('foo')
+In [52]: b_list
+Out[52]: ['foo', 'red', 'baz', 'dwarf', 'foo']
+In [53]: b_list.remove('foo')
+In [54]: b_list
+Out[54]: ['red', 'baz', 'dwarf', 'foo']
+In [55]: 'dwarf' in b_list
+Out[55]: True
+```
+- Using extend to append elements to an existing list, especially if you are building up a large list, is usually preferable to concatenate(+).
+
+```
+In [58]: x = [4, None, 'foo']
+In [59]: x.extend([7, 8, (2, 3)])
+```
+- You can sort a list in-place (without creating a new object) by calling its sort
+function
+
+```
+In [64]: b = ['saw', 'small', 'He', 'foxes', 'six']
+In [65]: b.sort(key=len)
+In [66]: b
+Out[66]: ['He', 'saw', 'six', 'small', 'foxes']
+```
+
+- The built-in bisect module implements binary search and insertion into a sorted list. bisect.bisect finds the location where an element should be inserted to keep it sorted, while bisect.insort actually inserts the element into that location:
+```
+In [67]: import bisect
+In [68]: c = [1, 2, 2, 2, 3, 4, 7]
+In [69]: bisect.bisect(c, 2)
+Out[69]: 4
+In [71]: bisect.insort(c, 6)
+In [72]: c
+Out[72]: [1, 2, 2, 2, 3, 4, 6, 7]
+```
+- You can select sections of most sequence types by using slice notation, which in its basic form consists of start:stop passed to the indexing operator \[]:
+- Either the start or stop can be omitted, in which case they default to the start of the sequence and the end of the sequence, respectively
+- Negative indices slice the sequence relative to the end
+```
+# [start, end)
+In [73]: seq = [7, 2, 3, 7, 5, 6, 0, 1]
+In [74]: seq[1:5]
+Out[74]: [2, 3, 7, 5]
+```
+- sequence types: strings, byte sequences, byte arrays, lists, tuples, range objects
+- A step can also be used after a second colon to, say, take every other element
 
 
 
