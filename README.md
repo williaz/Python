@@ -256,5 +256,22 @@ Out[74]: [2, 3, 7, 5]
 - sequence types: strings, byte sequences, byte arrays, lists, tuples, range objects
 - A step can also be used after a second colon to, say, take every other element
 
+#### Built-in Sequence Functions
+- Python has a built-in function, enumerate, which returns a sequence of (i, value) tuples:
+```
+for i, value in enumerate(collection):
+# do something with value and index i
+```
+- The sorted function returns a new sorted list
+- zip “pairs” up the elements of a number of lists, tuples, or other sequences to create a list of tuples:
+```
+
+```
+
+
+
+
+
+
 
 
